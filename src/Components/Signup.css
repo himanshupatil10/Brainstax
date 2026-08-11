@@ -57,45 +57,6 @@
   }
 }
 
-/* Avatar Pill Badge at Top */
-.top-avatar-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 6px;
-}
-
-.avatar-pill {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 30px;
-  padding: 4px 12px 4px 4px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.badge-xr {
-  background: #000000;
-  color: #84CC16;
-  font-size: 0.75rem;
-  font-weight: 800;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.5px;
-}
-
-.badge-z {
-  color: #4B5563;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
 .form-content-container {
   max-width: 380px;
   width: 100%;
@@ -107,18 +68,18 @@
 }
 
 .form-title {
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #2D3748;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.3px;
 }
 
 /* Floating Label & Outlined Inputs */
 .input-group {
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .floating-field {
@@ -128,9 +89,9 @@
 
 .field-input {
   width: 100%;
-  height: 46px;
+  height: 48px;
   padding: 0 16px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #1A202C;
   background: #FFFFFF;
   border: 1.5px solid #E5E7EB;
@@ -139,6 +100,8 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* When focused OR has value, border is purple */
+.field-input.has-value,
 .field-input:focus {
   border-color: #7E22CE;
 }
@@ -150,22 +113,19 @@
   transform: translateY(-50%);
   background-color: #FFFFFF;
   padding: 0 4px;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: #9CA3AF;
   pointer-events: none;
   transition: all 0.2s ease;
 }
 
+/* Floating label sitting on top notch line */
 .field-input:focus ~ .floating-label,
 .field-input.has-value ~ .floating-label,
 .field-input:not(:placeholder-shown) ~ .floating-label {
   top: 0;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #9CA3AF;
-}
-
-.field-input:focus ~ .floating-label {
   color: #7E22CE;
 }
 
@@ -176,7 +136,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #A0AEC0;
+  color: #9CA3AF;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -192,17 +152,17 @@
 /* Primary Sign up Button */
 .btn-primary {
   width: 100%;
-  height: 46px;
+  height: 48px;
   background-color: #6B21A8;
   color: #FFFFFF;
   border: none;
   border-radius: 8px;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(107, 33, 168, 0.2);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .btn-primary:hover {
@@ -219,8 +179,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 14px;
+  margin-top: 12px;
+  margin-bottom: 16px;
   cursor: pointer;
 }
 
@@ -246,7 +206,7 @@
 }
 
 .checkbox-label {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #4A5568;
   user-select: none;
   font-weight: 500;
@@ -256,7 +216,7 @@
 .divider-container {
   display: flex;
   align-items: center;
-  margin: 14px 0;
+  margin: 16px 0;
 }
 
 .divider-line {
@@ -268,13 +228,13 @@
 .divider-text {
   padding: 0 16px;
   color: #A0AEC0;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 
 /* Google Sign-in Button */
 .btn-google {
   width: 100%;
-  height: 44px;
+  height: 48px;
   background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 8px;
@@ -283,11 +243,11 @@
   justify-content: center;
   gap: 12px;
   color: #4A5568;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .btn-google:hover {
@@ -298,7 +258,7 @@
 /* Register switcher */
 .register-text {
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: #718096;
 }
 
@@ -317,7 +277,7 @@
 /* Card Bottom Footer Notice */
 .card-footer {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding-top: 16px;
   margin-top: auto;
@@ -331,24 +291,39 @@
     flex-direction: column;
     gap: 8px;
     text-align: center;
+    align-items: center;
   }
 }
 
 .footer-left {
   color: #718096;
+  max-width: 220px;
+  line-height: 1.35;
 }
 
 .footer-right {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-link-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-link {
   color: #7E22CE;
   text-decoration: none;
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .footer-link:hover {
   text-decoration: underline;
+}
+
+.footer-divider {
+  color: #CBD5E0;
+  font-size: 1rem;
 }

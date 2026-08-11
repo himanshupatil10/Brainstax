@@ -29,14 +29,6 @@ export default function Signup({ onSwitchToSignin }) {
 
       {/* Right Form Section */}
       <div className="form-section">
-        {/* Top Avatar Badge */}
-        <div className="top-avatar-badge">
-          <div className="avatar-pill">
-            <span className="badge-xr">XR</span>
-            <span className="badge-z">Z</span>
-          </div>
-        </div>
-
         <div className="form-content-container">
           <h1 className="form-title">Sign Up</h1>
 
@@ -234,13 +226,15 @@ export default function Signup({ onSwitchToSignin }) {
             © copyright @Brainstax 2025 | All Rights Reserved
           </div>
           <div className="footer-right">
-            <a href="#terms" className="footer-link">
-              Terms & Conditions
-            </a>
-            <span>|</span>
-            <a href="#privacy" className="footer-link">
-              Privacy Policy
-            </a>
+            <div className="footer-link-col">
+              <a href="#terms" className="footer-link">Terms &</a>
+              <a href="#terms" className="footer-link">Conditions</a>
+            </div>
+            <span className="footer-divider">|</span>
+            <div className="footer-link-col">
+              <a href="#privacy" className="footer-link">Privacy</a>
+              <a href="#privacy" className="footer-link">Policy</a>
+            </div>
           </div>
         </div>
       </div>
