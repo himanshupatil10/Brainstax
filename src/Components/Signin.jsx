@@ -4,7 +4,7 @@ import bannerImg from '../assets/brainstax-banner.png';
 import './Signin.css';
 
 export default function Signin({ onSwitchToSignup }) {
-  const [email, setEmail] = useState('jonas_kahnwald@gmail.com');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [keepLoggedIn, setKeepLoggedIn] = useState(false);

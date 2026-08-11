@@ -29,13 +29,7 @@ export default function Signup({ onSwitchToSignin }) {
 
       {/* Right Form Section */}
       <div className="form-section">
-        {/* Top Avatar Pill Badge */}
-        <div className="top-avatar-badge">
-          <div className="avatar-pill">
-            <span className="badge-xr">XR</span>
-            <span className="badge-z">Z</span>
-          </div>
-        </div>
+        
 
         <div className="form-content-container">
           <h1 className="form-title">Sign Up</h1>
