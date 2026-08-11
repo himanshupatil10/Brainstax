@@ -15,108 +15,93 @@ export default function Signin({ onSwitchToSignup }) {
 
   return (
     <div className="page-card">
-      {/* Left Banner Section */}
+      {/* Left Lavender Banner Section */}
       <div className="banner-section">
-        {/* Background SVG Vector Layer (World Map + Pins + Shipping Boxes) */}
+        {/* Background SVG Vector Layer */}
         <div className="banner-graphics-layer">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 500 650"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-          >
-            {/* World Map Vector Path Outline */}
-            <g opacity="0.12" fill="#7E22CE">
-              <path d="M40 120 Q 80 100 120 130 T 160 180 Q 140 220 90 240 T 40 180 Z" />
-              <path d="M120 280 Q 160 300 150 360 T 110 440 Q 90 400 100 320 Z" />
-              <path d="M220 100 Q 300 70 380 90 T 440 160 Q 400 240 320 220 T 240 180 Z" />
-              <path d="M230 220 Q 280 230 290 320 T 240 420 Q 210 360 215 280 Z" />
-              <path d="M380 340 Q 440 330 450 380 T 390 420 Q 360 400 380 340 Z" />
+          <svg viewBox="0 0 360 650" fill="none" xmlns="http://www.w3.org/2000/svg" className="banner-svg">
+            {/* World Map Silhouette Watermark */}
+            <g fill="#7E22CE" opacity="0.07">
+              <path d="M10 130 C 40 100, 90 110, 120 150 C 140 190, 80 230, 40 220 C 10 210, -10 160, 10 130 Z" />
+              <path d="M200 110 C 260 70, 340 90, 360 150 C 350 220, 270 250, 220 200 C 190 170, 180 130, 200 110 Z" />
+              <path d="M90 270 C 120 280, 130 340, 100 390 C 80 420, 60 380, 70 320 Z" />
+              <path d="M200 220 C 250 230, 270 320, 230 400 C 200 360, 190 300, 200 220 Z" />
+              <path d="M300 330 C 340 320, 350 380, 310 410 C 280 390, 280 350, 300 330 Z" />
             </g>
 
-            {/* Connecting Dashed Flight Arcs */}
+            {/* Connecting Curved Dashed Shipping Route */}
             <path
-              d="M120 160 C 200 90, 280 90, 360 140"
-              stroke="#9333EA"
-              strokeOpacity="0.25"
-              strokeWidth="2"
-              strokeDasharray="5 5"
-              fill="none"
-            />
-            <path
-              d="M360 140 C 340 260, 320 320, 310 400"
-              stroke="#9333EA"
-              strokeOpacity="0.25"
+              d="M 80 160 C 140 120, 210 110, 255 135"
+              stroke="#7E22CE"
+              strokeOpacity="0.22"
               strokeWidth="2"
               strokeDasharray="5 5"
               fill="none"
             />
 
             {/* Map Pin 1 */}
-            <g transform="translate(115, 140)">
-              <circle cx="12" cy="12" r="16" fill="#7E22CE" fillOpacity="0.1" />
+            <g transform="translate(62, 122)">
               <path
-                d="M12 2C7.58 2 4 5.58 4 10C4 16 12 22 12 22C12 22 20 16 20 10C20 5.58 16.42 2 12 2Z"
-                fill="#D8B4FE"
+                d="M20 0 C8.95 0 0 8.95 0 20 C0 32 20 52 20 52 C20 52 40 32 40 20 C40 8.95 31.05 0 20 0 Z"
+                fill="#E4D3FD"
+                fillOpacity="0.85"
               />
-              <circle cx="12" cy="10" r="3.5" fill="#7E22CE" />
+              <circle cx="20" cy="20" r="9" fill="#F4ECFE" />
             </g>
 
-            {/* Map Pin 2 */}
-            <g transform="translate(345, 115)">
-              <circle cx="20" cy="20" r="24" fill="#7E22CE" fillOpacity="0.12" />
+            {/* Map Pin 2 (Giant Top Right Pin) */}
+            <g transform="translate(210, 80)">
               <path
-                d="M20 4C12.27 4 6 10.27 6 18C6 28.5 20 39 20 39C20 39 34 28.5 34 18C34 10.27 27.73 4 20 4Z"
-                fill="#C084FC"
+                d="M32 0 C14.33 0 0 14.33 0 32 C0 52 32 84 32 84 C32 84 64 52 64 32 C64 14.33 49.67 0 32 0 Z"
+                fill="#E4D3FD"
+                fillOpacity="0.9"
               />
-              <circle cx="20" cy="18" r="6" fill="#FFFFFF" />
+              <circle cx="32" cy="32" r="16" fill="#F4ECFE" />
             </g>
 
             {/* Map Pin 3 */}
-            <g transform="translate(295, 380)">
-              <circle cx="16" cy="16" r="20" fill="#7E22CE" fillOpacity="0.1" />
+            <g transform="translate(245, 485)">
               <path
-                d="M16 4C10.48 4 6 8.48 6 14C6 21 16 30 16 30C16 30 26 21 26 14C26 8.48 21.52 4 16 4Z"
-                fill="#E9D5FF"
+                d="M16 0 C7.16 0 0 7.16 0 16 C0 26 16 42 16 42 C16 42 32 26 32 16 C32 7.16 24.84 0 16 0 Z"
+                fill="#E4D3FD"
+                fillOpacity="0.85"
               />
-              <circle cx="16" cy="14" r="4" fill="#7E22CE" />
+              <circle cx="16" cy="16" r="7" fill="#F4ECFE" />
             </g>
 
-            {/* Bottom-Left Shipping Boxes Illustration */}
-            <g transform="translate(10, 440)" opacity="0.25">
-              <rect x="0" y="80" width="130" height="90" rx="4" fill="#7E22CE" fillOpacity="0.3" />
-              <line x1="20" y1="80" x2="20" y2="170" stroke="#7E22CE" strokeWidth="2" />
-              <line x1="40" y1="80" x2="40" y2="170" stroke="#7E22CE" strokeWidth="2" />
-              <line x1="60" y1="80" x2="60" y2="170" stroke="#7E22CE" strokeWidth="2" />
-              <line x1="80" y1="80" x2="80" y2="170" stroke="#7E22CE" strokeWidth="2" />
-              <line x1="100" y1="80" x2="100" y2="170" stroke="#7E22CE" strokeWidth="2" />
-              <path d="M-10 140 H30 V165 H-10 Z" fill="#7E22CE" />
-              <circle cx="0" cy="165" r="8" fill="#6B21A8" />
-              <circle cx="20" cy="165" r="8" fill="#6B21A8" />
-              <rect x="140" y="60" width="80" height="110" rx="2" fill="#7E22CE" fillOpacity="0.2" />
-              <rect x="140" y="0" width="80" height="60" rx="2" fill="#7E22CE" fillOpacity="0.15" />
-              <line x1="180" y1="0" x2="180" y2="170" stroke="#7E22CE" strokeWidth="1.5" strokeDasharray="3 3" />
+            {/* Delivery Truck Outline */}
+            <g transform="translate(0, 540)" fill="#7E22CE" opacity="0.06">
+              <rect x="0" y="20" width="80" height="60" rx="2" />
+              <line x1="12" y1="20" x2="12" y2="80" stroke="#7E22CE" strokeWidth="2" opacity="0.8" />
+              <line x1="28" y1="20" x2="28" y2="80" stroke="#7E22CE" strokeWidth="2" opacity="0.8" />
+              <line x1="44" y1="20" x2="44" y2="80" stroke="#7E22CE" strokeWidth="2" opacity="0.8" />
+              <line x1="60" y1="20" x2="60" y2="80" stroke="#7E22CE" strokeWidth="2" opacity="0.8" />
+              <path d="M80 40 L100 40 L115 55 L115 80 L80 80 Z" />
+              <rect x="85" y="45" width="18" height="15" fill="#F4ECFE" />
+              <circle cx="20" cy="84" r="9" />
+              <circle cx="20" cy="84" r="4" fill="#F4ECFE" />
+              <circle cx="40" cy="84" r="9" />
+              <circle cx="40" cy="84" r="4" fill="#F4ECFE" />
+              <circle cx="95" cy="84" r="9" />
+              <circle cx="95" cy="84" r="4" fill="#F4ECFE" />
+            </g>
+
+            {/* Stacked Cargo Shipping Boxes */}
+            <g transform="translate(220, 495)" fill="#7E22CE" opacity="0.06">
+              <rect x="0" y="60" width="120" height="90" rx="3" />
+              <line x1="60" y1="60" x2="60" y2="150" stroke="#7E22CE" strokeWidth="2" strokeDasharray="4 4" opacity="0.6" />
+              <rect x="25" y="0" width="95" height="60" rx="3" />
+              <path d="M45 0 L72.5 18 L100 0" stroke="#7E22CE" strokeWidth="2" fill="none" opacity="0.8" />
+              <line x1="72.5" y1="18" x2="72.5" y2="60" stroke="#7E22CE" strokeWidth="2" strokeDasharray="3 3" opacity="0.6" />
             </g>
           </svg>
         </div>
 
         {/* Center Brainstax Branding Logo */}
         <div className="banner-logo-wrapper">
-          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8 6C8 3.79086 9.79086 2 12 2H16C18.2091 2 20 3.79086 20 6V36C20 38.2091 18.2091 40 16 40H12C9.79086 40 8 38.2091 8 36V6Z"
-              fill="#7E22CE"
-            />
-            <path
-              d="M24 10C24 7.79086 25.7909 6 28 6H30C33.3137 6 36 8.68629 36 12V18C36 20.2091 34.2091 22 32 22H28C25.7909 22 24 20.2091 24 18V10Z"
-              fill="#7E22CE"
-            />
-            <path
-              d="M24 26C24 23.7909 25.7909 22 28 22H32C34.2091 22 36 23.7909 36 26V30C36 33.3137 33.3137 36 30 36H28C25.7909 36 24 34.2091 24 32V26Z"
-              fill="#7E22CE"
-            />
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 14 L18 6 V38 H10 Z" fill="#6B21A8" />
+            <path d="M22 22 L30 14 V38 H22 Z" fill="#6B21A8" />
           </svg>
           <span className="logo-text">Brainstax</span>
         </div>
