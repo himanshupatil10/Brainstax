@@ -6,7 +6,7 @@
   min-height: 100vh;
   box-shadow: none;
   display: grid;
-  grid-template-columns: 44% 56%;
+  grid-template-columns: minmax(340px, 440px) 1fr;
   overflow: hidden;
   position: relative;
   border: none;
@@ -20,7 +20,7 @@
   }
 }
 
-/* Left Lavender Banner Section - Custom Adjusted Size & Border Radius */
+/* Left Lavender Banner Section - Proportional Vertical Width */
 .banner-section {
   background-color: #F4ECFE;
   border-radius: 24px;
@@ -33,14 +33,16 @@
   margin: 16px 0 16px 16px;
   height: calc(100vh - 32px);
   max-height: calc(100vh - 32px);
+  max-width: 440px;
 }
 
 @media (max-width: 900px) {
   .banner-section {
     border-radius: 16px;
     margin: 12px;
-    height: 300px;
-    min-height: 300px;
+    height: 280px;
+    min-height: 280px;
+    max-width: 100%;
   }
 }
 
