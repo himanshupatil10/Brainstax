@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import bannerImg from '../assets/brainstax-banner.png';
 import './Forgotpassword.css';
 
-export default function Forgotpassword({ onSwitchToSignin, onSwitchToSignup }) {
+export default function Forgotpassword({ onSwitchToSignin, onSendOtpSuccess }) {
   const [email, setEmail] = useState('jonas_kahnwald@gmail.com');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`OTP reset link sent to ${email}`);
+    if (onSendOtpSuccess) {
+      onSendOtpSuccess();
+    } else {
+      alert(`OTP reset link sent to ${email}`);
+    }
   };
 
   return (
