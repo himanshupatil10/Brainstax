@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Check } from 'lucide-react';
 import bannerImg from '../assets/brainstax-banner.png';
-import './Signin.css';
+import './Forgotpassword.css';
 
-export default function Signin({ onSwitchToSignup, onSwitchToForgot }) {
+export default function Forgotpassword({ onSwitchToSignin, onSwitchToSignup }) {
   const [email, setEmail] = useState('jonas_kahnwald@gmail.com');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [keepLoggedIn, setKeepLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Signing in as ${email}`);
+    alert(`OTP reset link sent to ${email}`);
   };
 
   return (
@@ -24,85 +20,35 @@ export default function Signin({ onSwitchToSignup, onSwitchToForgot }) {
       {/* Right Form Section */}
       <div className="form-section">
         <div className="form-content-container">
-          <h1 className="form-title">Sign In</h1>
+          <h1 className="form-title">Forgot Password?</h1>
+          
+          <p className="forgot-subtitle">
+            No worries! Enter your registered email ID so we can send a reset password link.
+          </p>
 
           <form onSubmit={handleSubmit}>
-            {/* Email Field */}
+            {/* Email Input Field */}
             <div className="input-group">
               <div className="floating-field">
                 <input
                   type="email"
-                  id="email"
+                  id="forgot-email"
                   className={`field-input ${email ? 'has-value' : ''}`}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder=" "
                   required
                 />
-                <label htmlFor="email" className="floating-label">
+                <label htmlFor="forgot-email" className="floating-label">
                   Email
                 </label>
               </div>
             </div>
 
-            {/* Password Field */}
-            <div className="input-group" style={{ marginBottom: '4px' }}>
-              <div className="floating-field">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  id="password"
-                  className={`field-input ${password ? 'has-value' : ''}`}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="password" className="floating-label">
-                  Password
-                </label>
-
-                <button
-                  type="button"
-                  className="password-toggle-btn"
-                  onClick={() => setShowPassword(!showPassword)}
-                  aria-label="Toggle password visibility"
-                >
-                  {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-                </button>
-              </div>
-            </div>
-
-            {/* Forgot Password Link */}
-            <div className="forgot-password-wrapper">
-              <a
-                href="#forgot"
-                className="forgot-password-link"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (onSwitchToForgot) onSwitchToForgot();
-                }}
-              >
-                Forgot Password?
-              </a>
-            </div>
-
-            {/* Primary Action Button */}
+            {/* Send OTP Primary Button */}
             <button type="submit" className="btn-primary">
-              Sign in
+              Send OTP
             </button>
-
-            {/* Keep me logged in Checkbox */}
-            <label className="remember-me-group">
-              <input
-                type="checkbox"
-                checked={keepLoggedIn}
-                onChange={(e) => setKeepLoggedIn(e.target.checked)}
-              />
-              <span className="custom-checkbox">
-                {keepLoggedIn && <Check size={12} color="#FFFFFF" strokeWidth={3} />}
-              </span>
-              <span className="checkbox-label">Keep me logged in</span>
-            </label>
 
             {/* Divider */}
             <div className="divider-container">
@@ -112,7 +58,11 @@ export default function Signin({ onSwitchToSignup, onSwitchToForgot }) {
             </div>
 
             {/* Google Sign In Button */}
-            <button type="button" className="btn-google" onClick={() => alert('Signing in with Google...')}>
+            <button
+              type="button"
+              className="btn-google"
+              onClick={() => alert('Signing in with Google...')}
+            >
               <span>Sign in with Google</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -134,20 +84,17 @@ export default function Signin({ onSwitchToSignup, onSwitchToForgot }) {
               </svg>
             </button>
 
-            {/* Bottom Register Switcher */}
+            {/* Back to Sign In Link */}
             <div className="register-text">
-              Do not have an account?
-              <span
-                className="register-link"
-                onClick={onSwitchToSignup}
-              >
-                Create one
+              Remember your password?
+              <span className="register-link" onClick={onSwitchToSignin}>
+                Sign In
               </span>
             </div>
           </form>
         </div>
 
-        {/* Footer info at bottom right */}
+        {/* Footer info at bottom */}
         <div className="card-footer">
           <div className="footer-left">
             © copyright @Brainstax 2025 | All Rights Reserved
