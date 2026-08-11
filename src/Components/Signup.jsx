@@ -4,9 +4,9 @@ import bannerImg from '../assets/brainstax-banner.png';
 import './Signup.css';
 
 export default function Signup({ onSwitchToSignin }) {
-  const [name, setName] = useState('Jonas Khanwald');
-  const [dob, setDob] = useState('11 December 1997');
-  const [email, setEmail] = useState('jonas_kahnwald@gmail.com');
+  const [name, setName] = useState('');
+  const [dob, setDob] = useState('');
+  const [email, setEmail] = useState('');
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [verifyPassword, setVerifyPassword] = useState('');
@@ -29,13 +29,7 @@ export default function Signup({ onSwitchToSignin }) {
 
       {/* Right Form Section */}
       <div className="form-section">
-        {/* Top Avatar Badge */}
-        <div className="top-avatar-badge">
-          <div className="avatar-pill">
-            <span className="badge-xr">XR</span>
-            <span className="badge-z">Z</span>
-          </div>
-        </div>
+       
 
         <div className="form-content-container">
           <h1 className="form-title">Sign Up</h1>
