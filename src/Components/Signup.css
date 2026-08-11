@@ -1,9 +1,9 @@
+/* Full Page Responsive Web Layout */
 .page-card {
   background: #FFFFFF;
   border-radius: 0;
   width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   box-shadow: none;
   display: grid;
   grid-template-columns: 44% 56%;
@@ -16,73 +16,107 @@
 @media (max-width: 900px) {
   .page-card {
     grid-template-columns: 1fr;
-    height: auto;
-    max-height: none;
-    overflow-y: auto;
+    min-height: auto;
   }
 }
 
-/* Left Lavender Banner Section - Seamless Proportional Scaling */
+/* Left Lavender Banner Section - Custom Adjusted Size & Border Radius */
 .banner-section {
   background-color: #F4ECFE;
-  border-radius: 0 24px 24px 0;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  height: 100vh;
-  max-height: 100vh;
+  padding: 0;
+  margin: 16px 0 16px 16px;
+  height: calc(100vh - 32px);
+  max-height: calc(100vh - 32px);
 }
 
 @media (max-width: 900px) {
   .banner-section {
-    border-radius: 0;
-    height: 280px;
-    min-height: 280px;
-    padding: 16px;
+    border-radius: 16px;
+    margin: 12px;
+    height: 300px;
+    min-height: 300px;
   }
 }
 
 .banner-image {
   width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 24px;
   display: block;
 }
 
-/* Right Form Section - Exact Screen Fit */
+/* Right Form Section */
 .form-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 48px;
+  padding: 32px 56px;
   position: relative;
-  height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
 }
 
 @media (max-width: 1100px) {
   .form-section {
-    padding: 16px 32px;
+    padding: 24px 36px;
   }
 }
 
 @media (max-width: 900px) {
   .form-section {
-    padding: 24px 20px;
-    height: auto;
-    max-height: none;
-    overflow: visible;
+    padding: 24px 20px 20px 20px;
+    min-height: auto;
   }
 }
 
+/* Top Avatar Pill Badge */
+.top-avatar-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.avatar-pill {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 30px;
+  padding: 4px 12px 4px 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.badge-xr {
+  background: #000000;
+  color: #84CC16;
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+
+.badge-z {
+  color: #4B5563;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .form-content-container {
-  max-width: 380px;
+  max-width: 420px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -92,18 +126,18 @@
 }
 
 .form-title {
-  font-size: 1.45rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: #1E1B4B;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   letter-spacing: -0.3px;
 }
 
 /* Floating Label & Outlined Inputs */
 .input-group {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .floating-field {
@@ -113,9 +147,9 @@
 
 .field-input {
   width: 100%;
-  height: 42px;
-  padding: 0 14px;
-  font-size: 0.9rem;
+  height: 46px;
+  padding: 0 16px;
+  font-size: 0.92rem;
   color: #1A202C;
   background: #FFFFFF;
   border: 1.5px solid #E5E7EB;
@@ -137,7 +171,7 @@
   transform: translateY(-50%);
   background-color: #FFFFFF;
   padding: 0 4px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: #9CA3AF;
   pointer-events: none;
   transition: all 0.2s ease;
@@ -148,14 +182,14 @@
 .field-input.has-value ~ .floating-label,
 .field-input:not(:placeholder-shown) ~ .floating-label {
   top: 0;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #7E22CE;
 }
 
 .input-icon-btn {
   position: absolute;
-  right: 12px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -176,12 +210,12 @@
 /* Primary Sign up Button */
 .btn-primary {
   width: 100%;
-  height: 42px;
+  height: 46px;
   background-color: #6B21A8;
   color: #FFFFFF;
   border: none;
   border-radius: 8px;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
@@ -202,15 +236,15 @@
 .remember-me-group {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 14px;
   cursor: pointer;
 }
 
 .custom-checkbox {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   border: 1.5px solid #CBD5E0;
   border-radius: 4px;
   display: flex;
@@ -230,7 +264,7 @@
 }
 
 .checkbox-label {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #4A5568;
   user-select: none;
   font-weight: 500;
@@ -240,7 +274,7 @@
 .divider-container {
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 14px 0;
 }
 
 .divider-line {
@@ -250,28 +284,28 @@
 }
 
 .divider-text {
-  padding: 0 14px;
+  padding: 0 16px;
   color: #A0AEC0;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 
 /* Google Sign-in Button */
 .btn-google {
   width: 100%;
-  height: 42px;
+  height: 46px;
   background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   color: #4A5568;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .btn-google:hover {
@@ -282,7 +316,7 @@
 /* Register switcher */
 .register-text {
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: #718096;
 }
 
@@ -303,17 +337,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 12px;
+  padding-top: 16px;
   margin-top: auto;
   border-top: 1px solid rgba(237, 242, 247, 0.6);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #718096;
 }
 
 @media (max-width: 600px) {
   .card-footer {
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     text-align: center;
   }
 }
@@ -332,7 +366,7 @@
   color: #7E22CE;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
 }
 
 .footer-link:hover {
@@ -342,5 +376,5 @@
 .footer-divider {
   color: #7E22CE;
   font-weight: 500;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
 }
