@@ -1,0 +1,364 @@
+.page-card {
+  background: var(--card-bg, #FFFFFF);
+  border-radius: var(--radius-card, 24px);
+  width: 100%;
+  min-height: 680px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04), 0 2px 10px rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-template-columns: 44% 56%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  padding: 12px;
+}
+
+@media (max-width: 900px) {
+  .page-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 8px;
+  }
+}
+
+/* Left Lavender Banner */
+.banner-section {
+  background-color: #F1ECFE;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  min-height: 640px;
+}
+
+.banner-graphics-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.banner-logo-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-text {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #6B21A8;
+  letter-spacing: -0.5px;
+}
+
+/* Right Form Section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 48px;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .form-section {
+    padding: 24px 20px 20px 20px;
+  }
+}
+
+/* Avatar Pill Badge at Top */
+.top-avatar-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.avatar-pill {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 30px;
+  padding: 4px 12px 4px 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.badge-xr {
+  background: #000000;
+  color: #84CC16;
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+
+.badge-z {
+  color: #4B5563;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-content-container {
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2D3748;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+/* Floating Label & Outlined Inputs */
+.input-group {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.floating-field {
+  position: relative;
+  width: 100%;
+}
+
+.field-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  font-size: 0.9rem;
+  color: #1A202C;
+  background: transparent;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-input.has-value,
+.field-input:focus {
+  border-color: #7E22CE;
+}
+
+.floating-label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.field-input:focus ~ .floating-label,
+.field-input.has-value ~ .floating-label,
+.field-input:not(:placeholder-shown) ~ .floating-label {
+  top: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #7E22CE;
+}
+
+.input-icon-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #A0AEC0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.input-icon-btn:hover {
+  color: #7E22CE;
+}
+
+/* Primary Sign up Button */
+.btn-primary {
+  width: 100%;
+  height: 46px;
+  background-color: #6B21A8;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.2);
+  margin-top: 6px;
+}
+
+.btn-primary:hover {
+  background-color: #5B21B6;
+  box-shadow: 0 6px 16px rgba(107, 33, 168, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+/* Checkbox */
+.remember-me-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #CBD5E0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: #FFFFFF;
+}
+
+.remember-me-group input[type="checkbox"] {
+  display: none;
+}
+
+.remember-me-group input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #7E22CE;
+  border-color: #7E22CE;
+}
+
+.checkbox-label {
+  font-size: 0.8rem;
+  color: #4A5568;
+  user-select: none;
+  font-weight: 500;
+}
+
+/* Divider line */
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #EDF2F7;
+}
+
+.divider-text {
+  padding: 0 16px;
+  color: #A0AEC0;
+  font-size: 0.8rem;
+}
+
+/* Google Sign-in Button */
+.btn-google {
+  width: 100%;
+  height: 44px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #4A5568;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-google:hover {
+  background-color: #F7FAFC;
+  border-color: #CBD5E0;
+}
+
+/* Register switcher */
+.register-text {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #718096;
+}
+
+.register-link {
+  color: #7E22CE;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Card Bottom Footer Notice */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  margin-top: auto;
+  border-top: 1px solid rgba(237, 242, 247, 0.6);
+  font-size: 0.78rem;
+  color: #A0AEC0;
+}
+
+@media (max-width: 600px) {
+  .card-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+.footer-left {
+  color: #718096;
+}
+
+.footer-right {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-link {
+  color: #7E22CE;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
