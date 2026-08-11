@@ -3,13 +3,8 @@ import { Eye, EyeOff, Check } from 'lucide-react';
 import bannerImg from '../assets/brainstax-banner.png';
 import './Signin.css';
 
-<<<<<<< HEAD
-export default function Signin({ onSwitchToSignup }) {
-  const [email, setEmail] = useState('');
-=======
 export default function Signin({ onSwitchToSignup, onSwitchToForgot }) {
   const [email, setEmail] = useState('jonas_kahnwald@gmail.com');
->>>>>>> 5f51cf77546b0f3055583c41e7c6928ed904e7bf
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [keepLoggedIn, setKeepLoggedIn] = useState(false);
