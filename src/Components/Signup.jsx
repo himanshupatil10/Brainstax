@@ -220,21 +220,15 @@ export default function Signup({ onSwitchToSignin }) {
           </form>
         </div>
 
-        {/* Footer info at bottom right */}
+        {/* Footer info matching exact single-line Figma layout */}
         <div className="card-footer">
           <div className="footer-left">
             © copyright @Brainstax 2025 | All Rights Reserved
           </div>
           <div className="footer-right">
-            <div className="footer-link-col">
-              <a href="#terms" className="footer-link">Terms &</a>
-              <a href="#terms" className="footer-link">Conditions</a>
-            </div>
+            <a href="#terms" className="footer-link">Terms & Conditions</a>
             <span className="footer-divider">|</span>
-            <div className="footer-link-col">
-              <a href="#privacy" className="footer-link">Privacy</a>
-              <a href="#privacy" className="footer-link">Policy</a>
-            </div>
+            <a href="#privacy" className="footer-link">Privacy Policy</a>
           </div>
         </div>
       </div>
