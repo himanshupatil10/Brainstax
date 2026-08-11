@@ -1,29 +1,23 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Calendar, Check } from 'lucide-react';
-import './Signup.css';
+import { Eye, EyeOff, Check } from 'lucide-react';
+import './Signin.css';
 
-export default function Signup({ onSwitchToSignin }) {
-  const [name, setName] = useState('Jonas Khanwald');
-  const [dob, setDob] = useState('11 December 1997');
+export default function Signin({ onSwitchToSignup }) {
   const [email, setEmail] = useState('jonas_kahnwald@gmail.com');
-  const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
-  const [verifyPassword, setVerifyPassword] = useState('');
-
   const [showPassword, setShowPassword] = useState(false);
-  const [showVerifyPassword, setShowVerifyPassword] = useState(false);
   const [keepLoggedIn, setKeepLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Signing up account for ${name} (${email})`);
+    alert(`Signing in as ${email}`);
   };
 
   return (
     <div className="page-card">
       {/* Left Banner Section */}
       <div className="banner-section">
-        {/* Background SVG Vector Layer */}
+        {/* Background SVG Vector Layer (World Map + Pins + Shipping Boxes) */}
         <div className="banner-graphics-layer">
           <svg
             width="100%"
@@ -33,7 +27,7 @@ export default function Signup({ onSwitchToSignin }) {
             xmlns="http://www.w3.org/2000/svg"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
           >
-            {/* World Map Outline */}
+            {/* World Map Vector Path Outline */}
             <g opacity="0.12" fill="#7E22CE">
               <path d="M40 120 Q 80 100 120 130 T 160 180 Q 140 220 90 240 T 40 180 Z" />
               <path d="M120 280 Q 160 300 150 360 T 110 440 Q 90 400 100 320 Z" />
@@ -90,7 +84,7 @@ export default function Signup({ onSwitchToSignin }) {
               <circle cx="16" cy="14" r="4" fill="#7E22CE" />
             </g>
 
-            {/* Bottom-Left Stacked Cargo Boxes Illustration */}
+            {/* Bottom-Left Shipping Boxes Illustration */}
             <g transform="translate(10, 440)" opacity="0.25">
               <rect x="0" y="80" width="130" height="90" rx="4" fill="#7E22CE" fillOpacity="0.3" />
               <line x1="20" y1="80" x2="20" y2="170" stroke="#7E22CE" strokeWidth="2" />
@@ -130,110 +124,47 @@ export default function Signup({ onSwitchToSignin }) {
 
       {/* Right Form Section */}
       <div className="form-section">
-        {/* Top Avatar Badge */}
-        <div className="top-avatar-badge">
-          <div className="avatar-pill">
-            <span className="badge-xr">XR</span>
-            <span className="badge-z">Z</span>
-          </div>
-        </div>
-
         <div className="form-content-container">
-          <h1 className="form-title">Sign Up</h1>
+          <h1 className="form-title">Sign In</h1>
 
           <form onSubmit={handleSubmit}>
-            {/* Your Name */}
-            <div className="input-group">
-              <div className="floating-field">
-                <input
-                  type="text"
-                  id="name"
-                  className={`field-input ${name ? 'has-value' : ''}`}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="name" className="floating-label">
-                  Your Name
-                </label>
-              </div>
-            </div>
-
-            {/* Date of Birth */}
-            <div className="input-group">
-              <div className="floating-field">
-                <input
-                  type="text"
-                  id="dob"
-                  className={`field-input ${dob ? 'has-value' : ''}`}
-                  value={dob}
-                  onChange={(e) => setDob(e.target.value)}
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="dob" className="floating-label">
-                  Date of Birth
-                </label>
-                <div className="input-icon-btn">
-                  <Calendar size={18} />
-                </div>
-              </div>
-            </div>
-
-            {/* Email */}
+            {/* Email Field */}
             <div className="input-group">
               <div className="floating-field">
                 <input
                   type="email"
-                  id="signup-email"
+                  id="email"
                   className={`field-input ${email ? 'has-value' : ''}`}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder=" "
                   required
                 />
-                <label htmlFor="signup-email" className="floating-label">
+                <label htmlFor="email" className="floating-label">
                   Email
                 </label>
               </div>
             </div>
 
-            {/* Mobile Number */}
-            <div className="input-group">
-              <div className="floating-field">
-                <input
-                  type="tel"
-                  id="mobile"
-                  className={`field-input ${mobile ? 'has-value' : ''}`}
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
-                  placeholder=" "
-                />
-                <label htmlFor="mobile" className="floating-label">
-                  Mobile Number
-                </label>
-              </div>
-            </div>
-
-            {/* Password */}
-            <div className="input-group">
+            {/* Password Field */}
+            <div className="input-group" style={{ marginBottom: '4px' }}>
               <div className="floating-field">
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  id="signup-password"
+                  id="password"
                   className={`field-input ${password ? 'has-value' : ''}`}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder=" "
                   required
                 />
-                <label htmlFor="signup-password" className="floating-label">
+                <label htmlFor="password" className="floating-label">
                   Password
                 </label>
+
                 <button
                   type="button"
-                  className="input-icon-btn"
+                  className="password-toggle-btn"
                   onClick={() => setShowPassword(!showPassword)}
                   aria-label="Toggle password visibility"
                 >
@@ -242,35 +173,23 @@ export default function Signup({ onSwitchToSignin }) {
               </div>
             </div>
 
-            {/* Verify Password */}
-            <div className="input-group">
-              <div className="floating-field">
-                <input
-                  type={showVerifyPassword ? 'text' : 'password'}
-                  id="verify-password"
-                  className={`field-input ${verifyPassword ? 'has-value' : ''}`}
-                  value={verifyPassword}
-                  onChange={(e) => setVerifyPassword(e.target.value)}
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="verify-password" className="floating-label">
-                  Verify Password
-                </label>
-                <button
-                  type="button"
-                  className="input-icon-btn"
-                  onClick={() => setShowVerifyPassword(!showVerifyPassword)}
-                  aria-label="Toggle verify password visibility"
-                >
-                  {showVerifyPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-                </button>
-              </div>
+            {/* Forgot Password Link */}
+            <div className="forgot-password-wrapper">
+              <a
+                href="#forgot"
+                className="forgot-password-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert('Forgot password clicked');
+                }}
+              >
+                Forgot Password?
+              </a>
             </div>
 
             {/* Primary Action Button */}
             <button type="submit" className="btn-primary">
-              Sign up
+              Sign in
             </button>
 
             {/* Keep me logged in Checkbox */}
@@ -318,12 +237,12 @@ export default function Signup({ onSwitchToSignin }) {
 
             {/* Bottom Register Switcher */}
             <div className="register-text">
-              Already have an account?
+              Do not have an account?
               <span
                 className="register-link"
-                onClick={onSwitchToSignin}
+                onClick={onSwitchToSignup}
               >
-                Sign In
+                Create one
               </span>
             </div>
           </form>

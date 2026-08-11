@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Signin from './Components/Signin.jsx';
 import Signup from './Components/Signup.jsx';
 
 export default function App() {
@@ -6,12 +7,11 @@ export default function App() {
 
   return (
     <div>
-      {currentPage === 'signup' ? (
+      {currentPage === 'signin' ? (
         <Signin onSwitchToSignup={() => setCurrentPage('signup')} />
-      ) : 
-    }
-      
-      
+      ) : (
+        <Signup onSwitchToSignin={() => setCurrentPage('signin')} />
+      )}
     </div>
   );
 }
