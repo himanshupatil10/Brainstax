@@ -29,7 +29,11 @@ export default function Signup({ onSwitchToSignin }) {
 
       {/* Right Form Section */}
       <div className="form-section">
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> 5f51cf77546b0f3055583c41e7c6928ed904e7bf
 
         <div className="form-content-container">
           <h1 className="form-title">Sign Up</h1>
