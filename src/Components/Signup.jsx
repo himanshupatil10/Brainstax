@@ -29,8 +29,6 @@ export default function Signup({ onSwitchToSignin }) {
 
       {/* Right Form Section */}
       <div className="form-section">
-       
-
         <div className="form-content-container">
           <h1 className="form-title">Sign Up</h1>
 
@@ -222,19 +220,15 @@ export default function Signup({ onSwitchToSignin }) {
           </form>
         </div>
 
-        {/* Footer info at bottom right */}
+        {/* Footer info matching exact single-line Figma layout */}
         <div className="card-footer">
           <div className="footer-left">
             © copyright @Brainstax 2025 | All Rights Reserved
           </div>
           <div className="footer-right">
-            <a href="#terms" className="footer-link">
-              Terms & Conditions
-            </a>
-            <span>|</span>
-            <a href="#privacy" className="footer-link">
-              Privacy Policy
-            </a>
+            <a href="#terms" className="footer-link">Terms & Conditions</a>
+            <span className="footer-divider">|</span>
+            <a href="#privacy" className="footer-link">Privacy Policy</a>
           </div>
         </div>
       </div>
